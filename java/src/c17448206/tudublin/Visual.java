@@ -10,7 +10,6 @@ public abstract class Visual extends PApplet
 	private int sampleRate = 44100;
 
 	
-
 	private float[] bands;
 	private float[] smoothedBands;
 
