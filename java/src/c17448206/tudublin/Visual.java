@@ -9,6 +9,8 @@ public abstract class Visual extends PApplet
 	private int frameSize = 512;
 	private int sampleRate = 44100;
 
+	//
+
 	private float[] bands;
 	private float[] smoothedBands;
 
