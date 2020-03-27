@@ -1,11 +1,12 @@
 package c17448206.tudublin;
+
 import processing.core.*;
-import java.lang.Math;
+
 
 public class Twizz extends PApplet
 {
 
-    MusicPlayer ui;
+    UserInterface ui;
 
     //variables 
     int winHeight = 1500; //window height
@@ -23,7 +24,7 @@ public class Twizz extends PApplet
     public PVector pos;
 
 
-    public Twizz(MusicPlayer ui)
+    public Twizz(UserInterface ui)
     {
         this.ui = ui;
         pos = new PVector(twizzXPos, twizzYPos); 

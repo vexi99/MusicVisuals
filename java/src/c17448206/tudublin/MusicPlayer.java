@@ -10,38 +10,29 @@ public class MusicPlayer extends PApplet
 {
     Minim minim;
     AudioSample as;
-    Twizz twizz;
+    UserInterface ui;
 
-    int frameSize = 1024;
-    int sampleRate = 44100;
-    int speed = 1;
-    float frameToSecond = sampleRate / (float) frameSize;
+    public int frameSize = 1024;
+    public int sampleRate = 44100;
+    public int speed = 1;
+    public float frameToSecond = sampleRate / (float) frameSize;
+
+    public MusicPlayer(UserInterface ui)
+    {
+        this.ui = ui;
+    }
 
     public void setup()
     {
-        minim = new Minim(this);
-        twizz = new Twizz(this); 
+        minim = new Minim(this); 
         as = minim.loadSample("Risar - Rientre Meditio.mp3", frameSize);
     }
 
-    public void settings()
-    {
-        size(1500,800);
-    }
 
-    public void keyPressed()
-	{
-		if (key == ' ')
-		{
-			as.stop();
-			as.trigger();
-        }
-    }
-
-    public void draw()
+    /*public void startStop()
     {
-        background(0);
-        stroke(255);
-        twizz.drawTwizz();
+        as.stop();
+        as.trigger();
     }
+*/
 }

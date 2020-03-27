@@ -6,21 +6,15 @@ package c17448206.tudublin;
 public class Main
 {	
 
-	public void visual()
+	public void userInterface()
 	{
 		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Visual());
-	}
-
-	public void musicPlayer()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new MusicPlayer());
+        processing.core.PApplet.runSketch( a, new UserInterface());
 	}
 	
 	public static void main(String[] args)
 	{
 		Main main = new Main();
-		main.musicPlayer();			
+		main.userInterface();			
 	}
 }
