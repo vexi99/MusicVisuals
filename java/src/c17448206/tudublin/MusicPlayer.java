@@ -19,7 +19,7 @@ public class MusicPlayer extends PApplet
     public void setup()
     {
         minim = new Minim(this);
-        twizz = new Twizz(this);
+        twizz = new Twizz(this); 
         as = minim.loadSample("Risar - Rientre Meditio.mp3", frameSize);
     }
 
