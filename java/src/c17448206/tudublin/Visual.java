@@ -1,10 +1,10 @@
-package ie.tudublin;
+package c17448206.tudublin;
 
 import processing.core.PApplet;
 import ddf.minim.*;
 import ddf.minim.analysis.FFT;
 
-public abstract class Visual extends PApplet
+public class Visual extends PApplet
 {
 	private int frameSize = 512;
 	private int sampleRate = 44100;
@@ -15,13 +15,17 @@ public abstract class Visual extends PApplet
 	private Minim minim;
 	private AudioInput ai;
 	private AudioPlayer ap;
+	private AudioSample as;
 	private AudioBuffer ab;
 	private FFT fft;
 
 	private float amplitude  = 0;
 	private float smothedAmplitude = 0;
 
-	
+	public void settings()
+	{
+		size(1024,500);
+	}
 	
 	public void startMinim() 
 	{
@@ -30,8 +34,17 @@ public abstract class Visual extends PApplet
 		fft = new FFT(frameSize, sampleRate);
 
 		bands = new float[(int) log2(frameSize)];
-  		smoothedBands = new float[bands.length];
+		smoothedBands = new float[bands.length];
+		  
+		as = minim.loadSample("Risar - Rientre Meditio.mp3", frameSize);
+		ab = ap.left;
 
+	}
+
+	public void render()
+	{
+		loadAudio();
+		keyPressed();
 	}
 
 	float log2(float f) {
@@ -85,10 +98,20 @@ public abstract class Visual extends PApplet
 		ab = ai.left;
 	}
 
-	public void loadAudio(String filename)
+	public void loadAudio()
 	{
-		ap = minim.loadFile(filename, frameSize);
+		as = minim.loadSample("Risar - Rientre Meditio.mp3", frameSize);
 		ab = ap.left;
+	}
+
+	public void keyPressed()
+	{
+		if (key == ' ')
+		{
+			as.stop();
+			as.trigger();
+		}
+
 	}
 
 	public int getFrameSize() {
