@@ -14,6 +14,7 @@ public class MusicPlayer extends PApplet
 
     int frameSize = 1024;
     int sampleRate = 44100;
+    int speed = 1;
     float frameToSecond = sampleRate / (float) frameSize;
 
     public void setup()
@@ -34,9 +35,8 @@ public class MusicPlayer extends PApplet
 		{
 			as.stop();
 			as.trigger();
-		}
-
-	}
+        }
+    }
 
     public void draw()
     {
