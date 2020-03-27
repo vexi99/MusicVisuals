@@ -10,20 +10,22 @@ public class MusicPlayer extends PApplet
 {
     Minim minim;
     AudioSample as;
+    Twizz twizz;
 
     int frameSize = 1024;
     int sampleRate = 44100;
     float frameToSecond = sampleRate / (float) frameSize;
 
-    public void settings()
-    {
-        size(1024,500);
-    }
-
     public void setup()
     {
         minim = new Minim(this);
+        twizz = new Twizz(this);
         as = minim.loadSample("Risar - Rientre Meditio.mp3", frameSize);
+    }
+
+    public void settings()
+    {
+        size(1500,800);
     }
 
     public void keyPressed()
@@ -40,5 +42,6 @@ public class MusicPlayer extends PApplet
     {
         background(0);
         stroke(255);
+        twizz.drawTwizz();
     }
 }
