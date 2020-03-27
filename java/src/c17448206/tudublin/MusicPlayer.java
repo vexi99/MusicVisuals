@@ -6,7 +6,7 @@ import ddf.minim.analysis.FFT;
 
 //MusicPlayer class will be used to actually play the music
 
-public class MusicPlayer extends PApplet
+public class MusicPlayer extends UserInterface
 {
     Minim minim;
     AudioSample as;
@@ -28,11 +28,12 @@ public class MusicPlayer extends PApplet
         as = minim.loadSample("Risar - Rientre Meditio.mp3", frameSize);
     }
 
-
-    /*public void startStop()
-    {
-        as.stop();
-        as.trigger();
-    }
-*/
+    public void keyPressed()
+	{
+		if (key == ' ')
+		{
+			as.stop();
+			as.trigger();
+        }
+	}
 }

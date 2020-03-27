@@ -12,9 +12,16 @@ public class Main
         processing.core.PApplet.runSketch( a, new UserInterface());
 	}
 	
+	public void musicPlayer()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new MusicPlayer(null));
+	}
+	
+
 	public static void main(String[] args)
 	{
 		Main main = new Main();
-		main.userInterface();			
+		main.musicPlayer();			
 	}
 }

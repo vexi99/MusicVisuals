@@ -45,11 +45,13 @@ public class UserInterface extends PApplet
     }
     //end of keyPress code
 
+    
+
     public void draw()
     {
         background(0);
         stroke(255);
-        twizz.drawTwizz();
+        //twizz.drawTwizz();
 
         if (checkKey('w') || checkKey('W'))
         {
@@ -78,7 +80,7 @@ public class UserInterface extends PApplet
         if (checkKey('e') || checkKey('E'))
         {
             System.out.println("e pressed");
-            
+		
         }
     }
 
