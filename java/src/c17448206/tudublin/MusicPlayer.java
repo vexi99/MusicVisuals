@@ -4,6 +4,8 @@ import processing.core.PApplet;
 import ddf.minim.*;
 import ddf.minim.analysis.FFT;
 
+//MusicPlayer class will be used to actually play the music
+
 public class MusicPlayer extends PApplet
 {
     Minim minim;
