@@ -53,40 +53,36 @@ public class MusicPlayer extends UserInterface
         stroke(255);
         twizz.drawTwizz();
 
+        //Stop/Start music
         if (checkKey(' '))
         {
             as.stop();
 			as.trigger();
         }
 
+        //Begin of movement code
         if (checkKey('w') || checkKey('W'))
         {
-            System.out.println("w pressed");
+            //System.out.println("w pressed");
             twizz.twizzYPos -= speed;
         }
 
         if (checkKey('a') || checkKey('A'))
         {
-            System.out.println("a pressed");
+            //System.out.println("a pressed");
             twizz.twizzXPos -= speed;
         }
 
         if (checkKey('s') || checkKey('S'))
         {
-            System.out.println("s pressed");
+            //System.out.println("s pressed");
             twizz.twizzYPos += speed;
         }
 
         if (checkKey('d') || checkKey('D'))
         {
-            System.out.println("d pressed");
+            //System.out.println("d pressed");
             twizz.twizzXPos += speed;
-        }
-
-        if (checkKey('e') || checkKey('E'))
-        {
-            System.out.println("e pressed");
-		
         }
     }
 }
