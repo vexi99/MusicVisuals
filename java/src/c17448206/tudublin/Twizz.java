@@ -6,7 +6,7 @@ import processing.core.*;
 public class Twizz extends PApplet
 {
 
-    UserInterface ui;
+    MusicPlayer ui;
 
     //variables 
     int winHeight = 1500; //window height
@@ -24,7 +24,7 @@ public class Twizz extends PApplet
     public PVector pos;
 
 
-    public Twizz(UserInterface ui)
+    public Twizz(MusicPlayer ui)
     {
         this.ui = ui;
         pos = new PVector(twizzXPos, twizzYPos); 

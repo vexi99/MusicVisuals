@@ -22,7 +22,6 @@ public class UserInterface extends PApplet
 
     public void setup()
     {
-        twizz = new Twizz(this);
         musicPlayer = new MusicPlayer(this);
     }
 
@@ -46,42 +45,5 @@ public class UserInterface extends PApplet
     //end of keyPress code
 
     
-
-    public void draw()
-    {
-        background(0);
-        stroke(255);
-        //twizz.drawTwizz();
-
-        if (checkKey('w') || checkKey('W'))
-        {
-            System.out.println("w pressed");
-            twizz.twizzYPos -= speed;
-        }
-
-        if (checkKey('a') || checkKey('A'))
-        {
-            System.out.println("a pressed");
-            twizz.twizzXPos -= speed;
-        }
-
-        if (checkKey('s') || checkKey('S'))
-        {
-            System.out.println("s pressed");
-            twizz.twizzYPos += speed;
-        }
-
-        if (checkKey('d') || checkKey('D'))
-        {
-            System.out.println("d pressed");
-            twizz.twizzXPos += speed;
-        }
-
-        if (checkKey('e') || checkKey('E'))
-        {
-            System.out.println("e pressed");
-		
-        }
-    }
 
 }
