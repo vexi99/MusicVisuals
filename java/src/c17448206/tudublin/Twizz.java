@@ -13,8 +13,8 @@ public class Twizz extends PApplet
     int winLength = 1500; //window Length
     int twizLength = 120;
     int twizHeight = 70;
-    int twizzYPos = (winLength / 2); // half of window height and length so twizz spawns in middle of screen
-    int twizzXPos = (winHeight / 2);
+    int twizzXPos = (winLength / 2); // half of window height and length so twizz spawns in middle of screen
+    int twizzYPos = (winHeight / 2);
     int xDist = 0; //x distance between twizz and food
     int yDist = 0; //y distance between twizz and food
     int foodX = 0;
