@@ -45,28 +45,23 @@ public class Twizz extends PApplet
         ui.line((twizzXPos + 60), (twizzYPos + 48), (twizzXPos + 75), (twizzYPos + 55));
         ui.line((twizzXPos + 60), (twizzYPos + 48), (twizzXPos + 45), (twizzYPos + 55)); 
 
-        //controlling code for twizz
-        
+        //controlling code for twizz for offscreen movement
         if (twizzXPos > 1500)
         {
             twizzXPos = 0;
         }
-
         if (twizzXPos < 0)
         {
             twizzXPos = 1500;
         }
-
         if (twizzYPos > 800)
         {
             twizzYPos = 0;
         }
-
         if (twizzYPos < 0)
         {
             twizzYPos = 800;
         }
-
     }
 
 
