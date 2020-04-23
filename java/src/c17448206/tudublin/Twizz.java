@@ -17,8 +17,8 @@ public class Twizz extends PApplet
     int winLength = 800; //window Length
     int twizLength = 120;
     int twizHeight = 70;
-    int twizzYPos = (winLength / 2); // half of window height and length so twizz spawns in middle of screen
-    int twizzXPos = (winHeight / 2);
+    int twizzXPos = (winLength / 2); // half of window height and length so twizz spawns in middle of screen
+    int twizzYPos = (winHeight / 2);
     int xDist = 0; //x distance between twizz and food
     int yDist = 0; //y distance between twizz and food
     int foodX = 0;
@@ -62,7 +62,25 @@ public class Twizz extends PApplet
         ui.triangle((twizzXPos + 50), (twizzYPos + 27), (twizzXPos + 70), (twizzYPos + 27) ,(twizzXPos + 60), (twizzYPos + 43));
         ui.line((twizzXPos + 60), (twizzYPos + 43), (twizzXPos + 60), (twizzYPos + 48));
         ui.line((twizzXPos + 60), (twizzYPos + 48), (twizzXPos + 75), (twizzYPos + 55));
-        ui.line((twizzXPos + 60), (twizzYPos + 48), (twizzXPos + 45), (twizzYPos + 55));
+        ui.line((twizzXPos + 60), (twizzYPos + 48), (twizzXPos + 45), (twizzYPos + 55)); 
+
+        //controlling code for twizz for offscreen movement
+        if (twizzXPos > 1500)
+        {
+            twizzXPos = 0;
+        }
+        if (twizzXPos < 0)
+        {
+            twizzXPos = 1500;
+        }
+        if (twizzYPos > 800)
+        {
+            twizzYPos = 0;
+        }
+        if (twizzYPos < 0)
+        {
+            twizzYPos = 800;
+        }
     }
 
 
