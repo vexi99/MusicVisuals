@@ -14,6 +14,8 @@ public class MusicPlayer extends UserInterface
     UserInterface ui;
     Twizz twizz;
     FoodSpawn foodSpawn;
+    LoveScale loveScale;
+
     Random random = new Random();
 
     public int frameSize = 1024;
@@ -33,6 +35,7 @@ public class MusicPlayer extends UserInterface
     {
         minim = new Minim(this); 
         foodSpawn = new FoodSpawn(this);
+        loveScale = new LoveScale(this);
         as = minim.loadSample("Risar - Rientre Meditio.mp3", frameSize);
         twizz = new Twizz(this, as.bufferSize());
         colorMode(HSB);
@@ -60,6 +63,7 @@ public class MusicPlayer extends UserInterface
         background(0);
         twizz.drawTwizz();
         foodSpawn.render();
+        loveScale.render();
 
         //Stop/Start music
         if (checkKey(' '))

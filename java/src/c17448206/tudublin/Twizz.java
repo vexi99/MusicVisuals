@@ -80,6 +80,11 @@ public class Twizz extends PApplet
         randomIntRed++;
         randomIntBlue++;
         randomIntGreen++;
+
+        if (randomIntRed == 0)
+        {
+            randomIntRed += 10;
+        }
     }
 
     public double getDist(double foodX, double foodY)
