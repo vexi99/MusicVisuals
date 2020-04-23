@@ -26,8 +26,9 @@ public class MusicPlayer extends UserInterface
     public void setup()
     {
         minim = new Minim(this); 
-        twizz = new Twizz(this);
+        
         as = minim.loadSample("Risar - Rientre Meditio.mp3", frameSize);
+        twizz = new Twizz(this, as.bufferSize());
         colorMode(HSB);
     }
 
@@ -51,6 +52,7 @@ public class MusicPlayer extends UserInterface
     public void draw()
     {
         background(0);
+        /*
         for(int i = 0; i < as.bufferSize(); i++)
         {
             stroke(
@@ -59,6 +61,7 @@ public class MusicPlayer extends UserInterface
 				, 255
 			);
         }
+        */
         twizz.drawTwizz();
 
         //Stop/Start music
