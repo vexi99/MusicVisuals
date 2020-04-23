@@ -32,7 +32,6 @@ public class Twizz extends PApplet
 
     public void drawTwizz()
     {
-        ui.stroke(255,255,255);
         ui.noFill();
         ui.rect(twizzXPos,  twizzYPos, twizLength, twizHeight); //lx , ly, w, h. body of twizz
         ui.triangle(twizzXPos, twizzYPos, (twizzXPos + 20),  (twizzYPos - 35) ,(twizzXPos +40), twizzYPos); //x1,y1 x2,y2 x3,y3

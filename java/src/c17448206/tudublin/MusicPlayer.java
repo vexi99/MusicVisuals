@@ -28,6 +28,7 @@ public class MusicPlayer extends UserInterface
         minim = new Minim(this); 
         twizz = new Twizz(this);
         as = minim.loadSample("Risar - Rientre Meditio.mp3", frameSize);
+        colorMode(HSB);
     }
 
     boolean[] keys = new boolean[1024];
@@ -50,7 +51,14 @@ public class MusicPlayer extends UserInterface
     public void draw()
     {
         background(0);
-        stroke(255);
+        for(int i = 0; i < as.bufferSize(); i++)
+        {
+            stroke(
+				map(i, 0, as.bufferSize(), 0, 255)
+				, 255
+				, 255
+			);
+        }
         twizz.drawTwizz();
 
         //Stop/Start music
@@ -63,25 +71,21 @@ public class MusicPlayer extends UserInterface
         //Begin of movement code
         if (checkKey('w') || checkKey('W'))
         {
-            //System.out.println("w pressed");
             twizz.twizzYPos -= speed;
         }
 
         if (checkKey('a') || checkKey('A'))
         {
-            //System.out.println("a pressed");
             twizz.twizzXPos -= speed;
         }
 
         if (checkKey('s') || checkKey('S'))
         {
-            //System.out.println("s pressed");
             twizz.twizzYPos += speed;
         }
 
         if (checkKey('d') || checkKey('D'))
         {
-            //System.out.println("d pressed");
             twizz.twizzXPos += speed;
         }
     }
