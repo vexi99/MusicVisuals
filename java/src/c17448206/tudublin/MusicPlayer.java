@@ -3,6 +3,7 @@ package c17448206.tudublin;
 import processing.core.PApplet;
 import ddf.minim.*;
 import ddf.minim.analysis.FFT;
+import java.util.Random;
 
 //MusicPlayer class will be used to actually play the music
 
@@ -12,11 +13,16 @@ public class MusicPlayer extends UserInterface
     AudioSample as;
     UserInterface ui;
     Twizz twizz;
+    FoodSpawn foodSpawn;
+    Random random = new Random();
 
     public int frameSize = 1024;
     public int sampleRate = 44100;
     public int speed = 1;
     public float frameToSecond = sampleRate / (float) frameSize;
+    public double foodX;
+    public double foodY;
+    public double dist;
 
     public MusicPlayer(UserInterface ui)
     {
@@ -26,7 +32,7 @@ public class MusicPlayer extends UserInterface
     public void setup()
     {
         minim = new Minim(this); 
-        
+        foodSpawn = new FoodSpawn(this);
         as = minim.loadSample("Risar - Rientre Meditio.mp3", frameSize);
         twizz = new Twizz(this, as.bufferSize());
         colorMode(HSB);
@@ -52,17 +58,8 @@ public class MusicPlayer extends UserInterface
     public void draw()
     {
         background(0);
-        /*
-        for(int i = 0; i < as.bufferSize(); i++)
-        {
-            stroke(
-				map(i, 0, as.bufferSize(), 0, 255)
-				, 255
-				, 255
-			);
-        }
-        */
         twizz.drawTwizz();
+        foodSpawn.render();
 
         //Stop/Start music
         if (checkKey(' '))
@@ -90,6 +87,27 @@ public class MusicPlayer extends UserInterface
         if (checkKey('d') || checkKey('D'))
         {
             twizz.twizzXPos += speed;
+        }
+
+        //Food X and Y co-ords
+        foodX = foodSpawn.getRandX();
+        foodY = foodSpawn.getRandY();
+
+        //Pass co-ords of food to Twizz Class by calling get dist. dist is then passed back to main
+        dist = twizz.getDist(foodX, foodY);
+        
+        //if distance between twizz and food is less than 40px, change foods co-ords. Food is "eaten"
+        if (dist < 40)
+        {
+            /*  do-while loop here is used to respawn the food once it has been eaten. The controlling code inside of the 
+                brackets is used to stop the food from spawning inside of the rect drawn by LoveScale                  */ 
+            do
+            {
+                foodSpawn.randX = random.nextInt(1500);
+                foodSpawn.randY = random.nextInt(800);
+            } while (foodSpawn.randX > 1240 && foodSpawn.randX < 1500 && foodSpawn.randY > 0 && foodSpawn.randY < 110);
+                      
+            //loveScale.incrementScore();
         }
     }
 }

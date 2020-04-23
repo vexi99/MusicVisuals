@@ -19,10 +19,10 @@ public class Twizz extends PApplet
     int twizHeight = 70;
     int twizzYPos = (winLength / 2); // half of window height and length so twizz spawns in middle of screen
     int twizzXPos = (winHeight / 2);
-    int xDist = 0; //x distance between twizz and food
-    int yDist = 0; //y distance between twizz and food
-    int foodX = 0;
-    int foodY = 0;
+    double xDist = 0; //x distance between twizz and food
+    double yDist = 0; //y distance between twizz and food
+    double foodX = 0;
+    double foodY = 0;
     int bufferSize;
     double hypo; //hypothenuse variable
 
@@ -81,6 +81,24 @@ public class Twizz extends PApplet
         randomIntBlue++;
         randomIntGreen++;
     }
+
+    public double getDist(double foodX, double foodY)
+    {
+        /*
+            getDist checks the distance between Twizz and the food by passing two arguments, X and Y co-ords of food
+        */
+
+        //twizzXPos has 60px added onto it to allow xDist to be taken from the centre of Twizz, rather than the top left corner, as 60 is half of the width
+        xDist = (twizzXPos + 60) - foodX;
+        yDist = (twizzYPos + 35) - foodY;
+
+        //hypo variable is the hypothenuse of xDist and yDist, which is put into a pythagoras theorem
+        hypo = Math.sqrt(Math.pow(xDist, 2) + Math.pow(yDist, 2)); //raised to the power of 2
+
+        //hypo passed back to caller
+        return hypo;
+    }
+
 
 
 }
