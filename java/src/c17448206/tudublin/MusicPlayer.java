@@ -103,6 +103,7 @@ public class MusicPlayer extends UserInterface
         //if distance between twizz and food is less than 40px, change foods co-ords. Food is "eaten"
         if (dist < 40)
         {
+            loveScale.incrementScore();
             /*  do-while loop here is used to respawn the food once it has been eaten. The controlling code inside of the 
                 brackets is used to stop the food from spawning inside of the rect drawn by LoveScale                  */ 
             do
@@ -110,8 +111,6 @@ public class MusicPlayer extends UserInterface
                 foodSpawn.randX = random.nextInt(1500);
                 foodSpawn.randY = random.nextInt(800);
             } while (foodSpawn.randX > 1240 && foodSpawn.randX < 1500 && foodSpawn.randY > 0 && foodSpawn.randY < 110);
-                      
-            //loveScale.incrementScore();
         }
     }
 }
