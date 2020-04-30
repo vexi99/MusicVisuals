@@ -25,6 +25,7 @@ public class MusicPlayer extends UserInterface
     public double foodX;
     public double foodY;
     public double dist;
+    public int score;
 
     public MusicPlayer(UserInterface ui)
     {
@@ -64,6 +65,7 @@ public class MusicPlayer extends UserInterface
         twizz.drawTwizz();
         foodSpawn.render();
         loveScale.render();
+        score = loveScale.getScore(); //assignment to update the score variable
 
         //Stop/Start music
         if (checkKey(' '))
@@ -111,6 +113,11 @@ public class MusicPlayer extends UserInterface
                 foodSpawn.randX = random.nextInt(1500);
                 foodSpawn.randY = random.nextInt(800);
             } while (foodSpawn.randX > 1240 && foodSpawn.randX < 1500 && foodSpawn.randY > 0 && foodSpawn.randY < 110);
+        }
+
+        if (score > 10)
+        {
+            //Todo visuals
         }
     }
 }

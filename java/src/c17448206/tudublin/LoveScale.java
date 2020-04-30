@@ -37,19 +37,21 @@ public class LoveScale extends PApplet
         randomIntBlue++;
         randomIntGreen++;
 
+        //code to try stop the all black colour, to avoid blending into the background
+
         if (randomIntRed == 0)
         {
-            randomIntRed += 10;
+            randomIntRed += 15;
         }
 
         if (randomIntGreen == 0)
         {
-            randomIntRed += 10;
+            randomIntRed += 15;
         }
 
         if (randomIntBlue == 0)
         {
-            randomIntRed += 10;
+            randomIntRed += 15;
         }
     }
 
@@ -67,6 +69,11 @@ public class LoveScale extends PApplet
         {
             rectXPos = 0;
         }
+    }
+
+    public int getScore()
+    {
+        return playerScore;
     }
 
     
