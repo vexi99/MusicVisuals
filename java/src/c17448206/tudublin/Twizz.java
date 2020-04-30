@@ -68,14 +68,6 @@ public class Twizz extends PApplet
 
     public void update()
     {
-        /*
-        for(int i = 0; i < 1024; i++)
-        {
-            ui.stroke((i % 255), (j % 255),(k % 255));
-            j++;
-            k++;
-        }*/
-
         ui.stroke((randomIntRed % 255), (randomIntBlue % 255), (randomIntGreen % 255));
         randomIntRed++;
         randomIntBlue++;

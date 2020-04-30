@@ -11,6 +11,9 @@ public class LoveScale extends PApplet
     int i;
     int rectXPos;
     int remainder;
+    int randomIntRed;
+    int randomIntGreen;
+    int randomIntBlue;
 
     public LoveScale(UserInterface ui)
     {
@@ -22,8 +25,32 @@ public class LoveScale extends PApplet
         ui.noFill();
         ui.rect(1240,10,250,100);
         //smaller rect drawn inside of the larger rectangle above, to fill it in.
-        ui.fill(255, 102, 255);
+        //ui.fill(255, 102, 255);
+        update();
         ui.rect(1240,10,rectXPos,100);
+    }
+
+    public void update()
+    {
+        ui.fill((randomIntRed % 255), (randomIntBlue % 255), (randomIntGreen % 255));
+        randomIntRed++;
+        randomIntBlue++;
+        randomIntGreen++;
+
+        if (randomIntRed == 0)
+        {
+            randomIntRed += 10;
+        }
+
+        if (randomIntGreen == 0)
+        {
+            randomIntRed += 10;
+        }
+
+        if (randomIntBlue == 0)
+        {
+            randomIntRed += 10;
+        }
     }
 
     public void incrementScore()
