@@ -15,6 +15,7 @@ public class MusicPlayer extends UserInterface
     Twizz twizz;
     FoodSpawn foodSpawn;
     LoveScale loveScale;
+    Visuals visuals;
 
     Random random = new Random();
 
@@ -37,6 +38,7 @@ public class MusicPlayer extends UserInterface
         minim = new Minim(this); 
         foodSpawn = new FoodSpawn(this);
         loveScale = new LoveScale(this);
+        visuals = new Visuals(this);
         as = minim.loadSample("Risar - Rientre Meditio.mp3", frameSize);
         twizz = new Twizz(this, as.bufferSize());
         colorMode(HSB);
@@ -62,6 +64,13 @@ public class MusicPlayer extends UserInterface
     public void draw()
     {
         background(0);
+
+        //Controlling code for background visuals as game progresses
+        if (score > 10)
+        {
+            
+        }
+
         twizz.drawTwizz();
         foodSpawn.render();
         loveScale.render();
@@ -115,9 +124,5 @@ public class MusicPlayer extends UserInterface
             } while (foodSpawn.randX > 1240 && foodSpawn.randX < 1500 && foodSpawn.randY > 0 && foodSpawn.randY < 110);
         }
 
-        if (score > 10)
-        {
-            //Todo visuals
-        }
     }
 }
