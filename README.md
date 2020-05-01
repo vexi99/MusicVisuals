@@ -10,7 +10,7 @@ This assignment is a game based Audio Visualiser which features my cat Twizz. Th
 [Link to my mix which I featured in this project](https://youtu.be/XuPx7XSoTN4)
 
 # Instructions
-Basic WASD controls to move Twizz. Food is randomly generated on the screen which the user has to eat to gain score.
+Basic WASD controls to move Twizz. Food is randomly generated on the screen which the user has to eat to gain score. The more food eaten the better the visuals get.
 
 # How it works
 The program is mainly run from the MusicPlayer.java file. This file is effectively the main function which calls upon all of the other objects and classes to run them in the right sequence from the draw() method. For example we use this draw() method to hold the if statements which cause the program to start rendering background effects once the player gets 10 score:
@@ -76,71 +76,4 @@ In this assignment I am most proud of my ability to self learn. I was sick and m
 
 I also really enjoyed actually applying everything I learned throughout the semester into one large project. This solidifed many new ways of coding that I picked up and has really given me a base into realistic coding, rather than learning from a page/slides. Allowing me to properly apply my book learning to a "real" project.
 
-# Markdown Tutorial
-
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-This is an image using a relative URL:
-
-![An image](images/p8.png)
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
 
