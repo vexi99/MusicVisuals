@@ -81,9 +81,38 @@ public class MusicPlayer extends UserInterface
 				,255
 			);
 			line(cx, cy, x, y);
-		}
+            
+        }
 		offs += average * 100f;		
-	}
+    }
+    
+    public void lineVisual()
+    {
+        float offs = 0;
+        float average = 0;
+        int i;
+        float x;
+        int y;
+
+        float startX = 1;
+        float startY = 10;
+
+        for(i = 0; i < as.bufferSize(); i++)
+        {
+            stroke(
+				map(i + offs, 0, as.bufferSize(), 0, 255) % 255
+				,255
+				,255
+            );
+            
+            x = startX * 100 * abs(as.left.get(i));
+
+            line(startX, startY, x, startY);
+            startY = (startY + 45) % WinHeight;
+        }
+        offs += average * 100f;	
+
+    }
     
     public void draw()
     {
@@ -91,9 +120,16 @@ public class MusicPlayer extends UserInterface
         score = loveScale.getScore(); //assignment to update the score variable
 
         //Controlling code for background visuals as game progresses
-        if (score > 10)
+        if (score > 10 && score < 20)
         {
             circleVisual();
+            // lineVisual();
+        }
+
+        if (score < 20 && score > 30)
+        {
+            circleVisual();
+            lineVisual();
         }
 
         twizz.drawTwizz();
@@ -127,6 +163,10 @@ public class MusicPlayer extends UserInterface
         if (checkKey('d') || checkKey('D'))
         {
             twizz.twizzXPos += speed;
+        }
+
+        if (checkKey('e') || checkKey('E'))
+        {
             loveScale.incrementScore();
         }
 
