@@ -76,4 +76,6 @@ In this assignment I am most proud of my ability to self learn. I was sick and m
 
 I also really enjoyed actually applying everything I learned throughout the semester into one large project. This solidifed many new ways of coding that I picked up and has really given me a base into realistic coding, rather than learning from a page/slides. Allowing me to properly apply my book learning to a "real" project.
 
+[Video link](https://youtu.be/7o6G5naRRns)
+
 
