@@ -59,11 +59,11 @@ public class LoveScale extends PApplet
     {
         playerScore++;
         //rectXPos incremented by 25 each time user eats food to allow the bar to move up the scale
-        rectXPos += 25;
+        rectXPos += 50;
         System.out.println(playerScore);
 
         //Remainder variable used to see if player score has gone past 10, meaning the scale must be reset
-        remainder = playerScore % 10;
+        remainder = playerScore % 5;
 
         if (remainder == 0)
         {

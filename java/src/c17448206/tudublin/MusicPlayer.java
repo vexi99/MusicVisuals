@@ -122,11 +122,11 @@ public class MusicPlayer extends UserInterface
         score = loveScale.getScore(); //assignment to update the score variable
 
         //Controlling code for background visuals as game progresses
-        if (score > 10 && score < 20)
+        if (score > 4 && score < 10)
         {
             circleVisual();
         }
-        else if (score > 19)
+        else if (score > 9)
         {
             circleVisual();
             lineVisual();
