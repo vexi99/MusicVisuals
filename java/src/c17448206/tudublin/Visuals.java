@@ -13,4 +13,12 @@ public class Visuals extends PApplet
         this.ui = ui;
     }
 
+    public void setup()
+    {
+        
+    }
+    public void drawBackground()
+    {
+    }
+
 }

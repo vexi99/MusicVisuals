@@ -37,7 +37,7 @@ public class LoveScale extends PApplet
         randomIntBlue++;
         randomIntGreen++;
 
-        //code to try stop the all black colour, to avoid blending into the background
+        //code to try stop the all black colour, to avoid blending into the background.
 
         if (randomIntRed == 0)
         {

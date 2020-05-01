@@ -60,21 +60,46 @@ public class MusicPlayer extends UserInterface
     {
         return keys[c] || keys [Character.toUpperCase(c)];
     }
+
+    public void circleVisual()
+	{
+        float offs = 0;
+        float lerpedw = 0;
+	    float average = 0;
+		strokeWeight(2);
+		float cx = width / 2;
+		float cy = height / 2;
+
+		for(int i = 0 ; i < as.bufferSize() ; i ++)
+		{
+			float theta = map(i, 0, as.bufferSize(), 0, TWO_PI);
+			float x = cx + sin(theta) * cx * abs(as.left.get(i));
+			float y = cy + cos(theta) * cx * abs(as.left.get(i));
+			stroke(
+				map(i + offs, 0, as.bufferSize(), 0, 255) % 255
+				,255
+				,255
+			);
+			line(cx, cy, x, y);
+		}
+		offs += average * 100f;		
+	}
     
     public void draw()
     {
         background(0);
+        score = loveScale.getScore(); //assignment to update the score variable
 
         //Controlling code for background visuals as game progresses
         if (score > 10)
         {
-            visuals.drawBackground();
+            circleVisual();
         }
 
         twizz.drawTwizz();
         foodSpawn.render();
         loveScale.render();
-        score = loveScale.getScore(); //assignment to update the score variable
+        
 
         //Stop/Start music
         if (checkKey(' '))
@@ -102,6 +127,7 @@ public class MusicPlayer extends UserInterface
         if (checkKey('d') || checkKey('D'))
         {
             twizz.twizzXPos += speed;
+            loveScale.incrementScore();
         }
 
         //Food X and Y co-ords
