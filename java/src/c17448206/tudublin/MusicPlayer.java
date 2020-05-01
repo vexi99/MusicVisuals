@@ -68,7 +68,7 @@ public class MusicPlayer extends UserInterface
         //Controlling code for background visuals as game progresses
         if (score > 10)
         {
-            
+            visuals.drawBackground();
         }
 
         twizz.drawTwizz();
