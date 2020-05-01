@@ -106,7 +106,7 @@ public class MusicPlayer extends UserInterface
 				,255
             );
             
-            x = startX * 100 * abs(as.left.get(i));
+            x = startX * 500 * abs(as.left.get(i));
 
             line(startX, startY, x, startY);
             line(oppositeX, startY, oppositeX - x, startY);
@@ -126,7 +126,7 @@ public class MusicPlayer extends UserInterface
         {
             circleVisual();
         }
-        else if (score > 20)
+        else if (score > 19)
         {
             circleVisual();
             lineVisual();
