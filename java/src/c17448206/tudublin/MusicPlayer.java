@@ -165,11 +165,6 @@ public class MusicPlayer extends UserInterface
             twizz.twizzXPos += speed;
         }
 
-        if (checkKey('e') || checkKey('E'))
-        {
-            loveScale.incrementScore();
-        }
-
         //Food X and Y co-ords
         foodX = foodSpawn.getRandX();
         foodY = foodSpawn.getRandY();
