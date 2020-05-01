@@ -39,7 +39,7 @@ public class MusicPlayer extends UserInterface
         foodSpawn = new FoodSpawn(this);
         loveScale = new LoveScale(this);
         visuals = new Visuals(this);
-        as = minim.loadSample("Risar - Rientre Meditio.mp3", frameSize);
+        as = minim.loadSample("mix.mp3", frameSize);
         twizz = new Twizz(this, as.bufferSize());
         colorMode(HSB);
     }
@@ -96,6 +96,7 @@ public class MusicPlayer extends UserInterface
 
         float startX = 1;
         float startY = 10;
+        float oppositeX = 1499;
 
         for(i = 0; i < as.bufferSize(); i++)
         {
@@ -108,6 +109,7 @@ public class MusicPlayer extends UserInterface
             x = startX * 100 * abs(as.left.get(i));
 
             line(startX, startY, x, startY);
+            line(oppositeX, startY, oppositeX - x, startY);
             startY = (startY + 45) % WinHeight;
         }
         offs += average * 100f;	
