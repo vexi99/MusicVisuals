@@ -1,21 +1,73 @@
 # Music Visualiser Project
 
-Name:
+Name:David Tilson
 
-Student Number: 
-
-## Instructions
-- Fork this repository and use it a starter project for your assignment
-- Create a new package named your student number and put all your code in this package.
-- You should start by creating a subclass of ie.tudublin.Visual
-- There is an example visualiser called MyVisual in the example package
-- Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
+Student Number: C17448206
 
 # Description of the assignment
+This assignment is a game based Audio Visualiser which features my cat Twizz. The objective of the game is to move the character using WASD controls to eat the food which is randomly generated on screen. Each food eaten goes towards your overall score, at intervals of 10 new visuals start to spawn. The music provided in the background was mixed by myself, it was taken from a livestream I did with my decks, I thought you would appreciate it in conjunction with the game itself.
 
 # Instructions
+Basic WASD controls to move Twizz. Food is randomly generated on the screen which the user has to eat to gain score.
 
 # How it works
+The program is mainly run from the MusicPlayer.java file. This file is effectively the main function which calls upon all of the other objects and classes to run them in the right sequence from the draw() method. For example we use this draw() method to hold the if statements which cause the program to start rendering background effects once the player gets 10 score:
+
+```Java
+//Controlling code for background visuals as game progresses
+        if (score > 10 && score < 20)
+        {
+            circleVisual();
+        }
+        else if (score > 19)
+        {
+            circleVisual();
+            lineVisual();
+        }
+```
+
+The character model for Twizz is handed within the Twizz class itself, in the drawTwizz() method. This method is then called within the draw() method in MusicPlayer.
+
+The food is randomly generated using Java's inbuilt Random package which I imported in this project. The food is given a random X and Y co-ordinate using the nextInt() function in the Random package. Controlling code is then added in a do-while loop to stop food from spawning behind the scoreboard, stopping the player from finding it. 
+
+```Java
+	//Pass co-ords of food to Twizz Class by calling get dist. dist is then passed back to main
+        dist = twizz.getDist(foodX, foodY);
+        
+        //if distance between twizz and food is less than 40px, change foods co-ords. Food is "eaten"
+        if (dist < 40)
+        {
+            loveScale.incrementScore();
+            /*  do-while loop here is used to respawn the food once it has been eaten. The controlling code inside of the 
+                brackets is used to stop the food from spawning inside of the rect drawn by LoveScale                  */ 
+            do
+            {
+                foodSpawn.randX = random.nextInt(1500);
+                foodSpawn.randY = random.nextInt(800);
+            } while (foodSpawn.randX > 1240 && foodSpawn.randX < 1500 && foodSpawn.randY > 0 && foodSpawn.randY < 110);
+        }
+```
+The distance between Twizz and the food is calculated using pythagorus's theorem within the getDist() method in Twizz.java. The X and Y co-ordinates of the food is then taken away from Twizz's X and Y co-ords to give the distance between the two. These two distances, called xDist and yDist are then placed within pythagorus's theorem using the help of the "Math" imported package. This then gives one distance between Twizz and the Food. Pythagorus's theorem is used here as the distance between Twizz and the Food will always be a right angled triangle. This is then passed back to the dist variable in MusicPlayer.Java. If the distance between twizz and the food is less than 40px, the food is "eaten", player score is incremented and food is spawned at a new random location.
+
+```Java
+public double getDist(double foodX, double foodY)
+    {
+        /*
+            getDist checks the distance between Twizz and the food by passing two arguments, X and Y co-ords of food
+        */
+
+        //twizzXPos has 60px added onto it to allow xDist to be taken from the centre of Twizz, rather than the top left corner, as 60 is half of the width
+        xDist = (twizzXPos + 60) - foodX;
+        yDist = (twizzYPos + 35) - foodY;
+
+        //hypo variable is the hypothenuse of xDist and yDist, which is put into a pythagoras theorem
+        hypo = Math.sqrt(Math.pow(xDist, 2) + Math.pow(yDist, 2)); //raised to the power of 2
+
+        //hypo passed back to caller
+        return hypo;
+    }
+```
+
 
 # What I am most proud of in the assignment
 
