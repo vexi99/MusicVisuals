@@ -21,7 +21,7 @@ public class MusicPlayer extends UserInterface
 
     public int frameSize = 1024;
     public int sampleRate = 44100;
-    public int speed = 1;
+    public int speed = 2;
     public float frameToSecond = sampleRate / (float) frameSize;
     public double foodX;
     public double foodY;
@@ -123,10 +123,8 @@ public class MusicPlayer extends UserInterface
         if (score > 10 && score < 20)
         {
             circleVisual();
-            // lineVisual();
         }
-
-        if (score < 20 && score > 30)
+        else if (score > 20)
         {
             circleVisual();
             lineVisual();
