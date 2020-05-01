@@ -7,7 +7,7 @@ Student Number: C17448206
 # Description of the assignment
 This assignment is a game based Audio Visualiser which features my cat Twizz. The objective of the game is to move the character using WASD controls to eat the food which is randomly generated on screen. Each food eaten goes towards your overall score, at intervals of 10 new visuals start to spawn. The music provided in the background was mixed by myself, it was taken from a livestream I did with my decks, I thought you would appreciate it in conjunction with the game itself.
 
-Link to my mix which I featured in this project[hyperlink](https://youtu.be/XuPx7XSoTN4)
+[Link to my mix which I featured in this project](https://youtu.be/XuPx7XSoTN4)
 
 # Instructions
 Basic WASD controls to move Twizz. Food is randomly generated on the screen which the user has to eat to gain score.
